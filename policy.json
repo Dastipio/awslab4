@@ -1,8 +1,9 @@
-0{	"expiration" : {"day":1},
-	"conditions": [ ["starts-with", "$key", "Daniel.Stanczak/"],
-    				 {"bucket": "Stanczak-lab4"}, 
-    				 {"acl": "private"},
-    				 {"success_action_redirect": "http://localhost:8080"},   
+{	"expiration" : {"day":1},
+	"conditions": [ ["starts-with", "$key", "stanczak.daniel/"],
+					 {"x-amz-meta-name": "stanczak daniel"},
+					 {"x-amz-meta-computer": "localhost"},
+    				 {"bucket": "stanczak-lab4"}, 
+    				 {"success_action_redirect": "http://localhost:8080/s3digest"},   
     				 ["content-length-range", 0, 1048576]
     				]   
 }

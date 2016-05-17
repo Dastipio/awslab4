@@ -14,20 +14,22 @@ var task = function(request, callback){
 
 	//2. prepare policy
 	var policy = new Policy(policyData);
+	
+	policyData.conditions.push({"x-amz-meta-address": request.ip});
+	policyData.conditions.push({"x-amz-meta-firstname":"Daniel"});
+	policyData.conditions.push({"x-amz-meta-lastname": "Stanczak"});
 
 	
 	//3. generate form fields for S3 POST
 	var s3Form = new S3Form(policy);
 	//4. get bucket name
 	var formFields=s3Form.generateS3FormFields();
-	formFields = s3Form.addS3CredentialsFields(formFields,awsConfig);
+	formFields = s3Form.addS3CredientalsFields(formFields,awsConfig);
 	
 	var bucketName = policy.getConditionValueByKey("bucket");
-	
-	var fields = s3Form.generateS3FormFields();
-	fields = s3Form.addS3CredientalsFields(fields, awsConfig);
 
-	callback(null, {template: INDEX_TEMPLATE, params:{fields:formFields, bucket:bucketname}});
+
+	callback(null, {template: INDEX_TEMPLATE, params:{fields:formFields, bucket:bucketName}});
 }
 
 exports.action = task;

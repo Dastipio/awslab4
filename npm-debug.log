@@ -1,20 +1,74 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
 1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'install' ]
+1 verbose cli   'install',
+1 verbose cli   'awssdk' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
 4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
-5 error Error: ENOENT, stat 'C:\Users\student\AppData\Roaming\npm'
-6 error If you need help, you may report this *entire* log,
-6 error including the npm and node versions, at:
-6 error     <http://github.com/npm/npm/issues>
-7 error System Windows_NT 6.2.9200
-8 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
-9 error cwd C:\Users\student\Desktop\awslab4-master\awslab4-master
-10 error node -v v0.10.32
-11 error npm -v 1.4.28
-12 error path C:\Users\student\AppData\Roaming\npm
-13 error code ENOENT
-14 error errno 34
-15 verbose exit [ 34, true ]
+5 warn package.json awslab4@0.0.1 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'awssdk', null ]
+8 verbose cache add name=undefined spec="awssdk" args=["awssdk",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'awssdk',
+9 verbose parsed url   path: 'awssdk',
+9 verbose parsed url   href: 'awssdk' }
+10 silly lockFile 57aec2bf-awssdk awssdk
+11 verbose lock awssdk C:\Users\student\AppData\Roaming\npm-cache\57aec2bf-awssdk.lock
+12 silly lockFile 57aec2bf-awssdk awssdk
+13 silly lockFile 57aec2bf-awssdk awssdk
+14 verbose addNamed [ 'awssdk', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 116b6605-awssdk awssdk@
+17 verbose lock awssdk@ C:\Users\student\AppData\Roaming\npm-cache\116b6605-awssdk.lock
+18 silly addNameRange { name: 'awssdk', range: '*', hasData: false }
+19 verbose request where is /awssdk
+20 verbose request registry https://registry.npmjs.org/
+21 verbose request id ae79745c0f06dfa8
+22 verbose url raw /awssdk
+23 verbose url resolving [ 'https://registry.npmjs.org/', './awssdk' ]
+24 verbose url resolved https://registry.npmjs.org/awssdk
+25 verbose request where is https://registry.npmjs.org/awssdk
+26 info trying registry request attempt 1 at 09:59:13
+27 http GET https://registry.npmjs.org/awssdk
+28 http 404 https://registry.npmjs.org/awssdk
+29 silly registry.get cb [ 404,
+29 silly registry.get   { 'content-type': 'application/json',
+29 silly registry.get     'cache-control': 'max-age=0',
+29 silly registry.get     'content-length': '2',
+29 silly registry.get     'accept-ranges': 'bytes',
+29 silly registry.get     date: 'Tue, 17 May 2016 07:59:14 GMT',
+29 silly registry.get     via: '1.1 varnish',
+29 silly registry.get     age: '0',
+29 silly registry.get     connection: 'keep-alive',
+29 silly registry.get     'x-served-by': 'cache-fra1247-FRA',
+29 silly registry.get     'x-cache': 'MISS',
+29 silly registry.get     'x-cache-hits': '0',
+29 silly registry.get     'x-timer': 'S1463471954.170220,VS0,VE437',
+29 silly registry.get     vary: 'Accept-Encoding' } ]
+30 silly lockFile 116b6605-awssdk awssdk@
+31 silly lockFile 116b6605-awssdk awssdk@
+32 error 404 Not Found
+32 error 404
+32 error 404 'awssdk' is not in the npm registry.
+32 error 404 You should bug the author to publish it
+32 error 404 It was specified as a dependency of 'awslab4'
+32 error 404
+32 error 404 Note that you can also install from a
+32 error 404 tarball, folder, or http url, or git url.
+33 error System Windows_NT 6.2.9200
+34 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "awssdk"
+35 error cwd C:\Users\student\awslab4
+36 error node -v v0.10.32
+37 error npm -v 1.4.28
+38 error code E404
+39 verbose exit [ 1, true ]
