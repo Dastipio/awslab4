@@ -33,12 +33,12 @@
 18 silly addNameRange { name: 'awssdk', range: '*', hasData: false }
 19 verbose request where is /awssdk
 20 verbose request registry https://registry.npmjs.org/
-21 verbose request id ae79745c0f06dfa8
+21 verbose request id 2bd575afb84a2711
 22 verbose url raw /awssdk
 23 verbose url resolving [ 'https://registry.npmjs.org/', './awssdk' ]
 24 verbose url resolved https://registry.npmjs.org/awssdk
 25 verbose request where is https://registry.npmjs.org/awssdk
-26 info trying registry request attempt 1 at 09:59:13
+26 info trying registry request attempt 1 at 11:07:07
 27 http GET https://registry.npmjs.org/awssdk
 28 http 404 https://registry.npmjs.org/awssdk
 29 silly registry.get cb [ 404,
@@ -46,14 +46,14 @@
 29 silly registry.get     'cache-control': 'max-age=0',
 29 silly registry.get     'content-length': '2',
 29 silly registry.get     'accept-ranges': 'bytes',
-29 silly registry.get     date: 'Tue, 17 May 2016 07:59:14 GMT',
+29 silly registry.get     date: 'Tue, 17 May 2016 09:07:08 GMT',
 29 silly registry.get     via: '1.1 varnish',
 29 silly registry.get     age: '0',
 29 silly registry.get     connection: 'keep-alive',
-29 silly registry.get     'x-served-by': 'cache-fra1247-FRA',
+29 silly registry.get     'x-served-by': 'cache-ams4138-AMS',
 29 silly registry.get     'x-cache': 'MISS',
 29 silly registry.get     'x-cache-hits': '0',
-29 silly registry.get     'x-timer': 'S1463471954.170220,VS0,VE437',
+29 silly registry.get     'x-timer': 'S1463476028.014526,VS0,VE104',
 29 silly registry.get     vary: 'Accept-Encoding' } ]
 30 silly lockFile 116b6605-awssdk awssdk@
 31 silly lockFile 116b6605-awssdk awssdk@
