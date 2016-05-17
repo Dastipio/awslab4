@@ -16,10 +16,10 @@ AWS.config.loadFromPath('./config.json');
 	//callback(null, "Dodano do bucket: " + bucket + " " + "za pomoca klucza: " + key);
 
 	s3.getObject(params, function(err, data) {
-	
+		if(err) {callback(err); return;}
 		var doc = data.body;
 		var algorithms=['md5','sha1','sha256','sha512'];
-		var loop =1;
+		var loopCount =1;
 
 			helpers.calculateMultiDigest(doc, 
 				algorithms, 
