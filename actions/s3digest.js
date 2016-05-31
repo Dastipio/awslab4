@@ -1,4 +1,4 @@
-var AWS = require("aws-sdk");
+var AWS = require("awssdk");
 var helpers = require("../helpers");
 var simpleDb = require("./simpleDb");
 AWS.config.loadFromPath('./config.json');
@@ -24,20 +24,13 @@ s3.getObject(params, function(err, data) {
 		algorithms, 
 		function(err, digests) {
 			callback(null, digests.join("<br>"));				
-			// simpleDb.createDomain(function(){
-			
-		    // var AttributesPut = [ 
-				// {		
-					// Name: 'MD5', /* required */
-					// Value: 'TEST' /* required */
-				// },
-			// ];			
-			// simpleDb.putAttributes('Plik1', AttributesPut, function(){
-			   
-			   	 
-			   // });
-			// });		
-			simpleDb.getFromDb('Plik1');			
+		  var AttributesPut = [ ];
+					for(var i; i < algorithms.length; i){
+						AttributesPut.push({Name:algorithms[i], Value:digest[i]});
+					}
+					simpleDb.putAttributes('Pliki', AttributesPut, function(){
+					simpleDb.getFromDb('Pliki');				   	 
+			   });
 		}, 
 		loopCount);   // successful response
 });
