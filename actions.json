@@ -2,7 +2,7 @@
 	{"path": "/digestForm", "action":{"template":"digestForm.ejs", "params":[]} },
 	{"path":"/","action":"createform"},	
 	{"path":"/digest","action":"digest"},
-	{"path":"/action","action":"action"},
-	{"path":"/s3digest","action":"s3digest"}
+	{"path":"/s3digest","action":"s3digest"},
+	{"path":"/simpleDb","action":"simpleDb"}
 
 ]
