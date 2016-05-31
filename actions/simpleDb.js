@@ -2,7 +2,7 @@ var AWS = require("aws-sdk");
 AWS.config.loadFromPath('./config.json');
 
 var simpledb = new AWS.SimpleDB();
-var domainName = 'MHufnagielDomain';
+var domainName = 'stanczak.daniel';
 
 var createDomain = function(callback){
 var params = {
@@ -29,24 +29,49 @@ simpledb.getAttributes(params, function(err, data) {
 });
 }
 
-var putAttributes = function(itemName, attributes, callback)
-{
+var selectFromDb = function(callback){
+console.log("jestem");
 var params = {
-  Attributes: attributes,
-  DomainName: domainName, /* required */
-  ItemName: itemName, /* required */
+  SelectExpression: "select * from MHufnagielDomain"
 };
-simpledb.putAttributes(params, function(err, data) {
-  if (err) console.log(err, err.stack); // an error occurred
-
-  else     
-  {
-	console.log('Zapisano do SimpleDB');           // successful response
-	callback();
-  }
+simpledb.select(params, function(err, data) {
+	  if (err) console.log(err, err.stack); // an error occurred
+	  else{
+	  callback(data);
+     // successful response
+		}
 });
 }
 
+var putAttributes = function(itemName, attributes, callback)
+{
+	var params = {
+	  Attributes: attributes,
+	  DomainName: domainName, /* required */
+	  ItemName: itemName, /* required */
+	};
+	simpledb.putAttributes(params, function(err, data) {
+		  if (err) console.log(err, err.stack); // an error occurred
+		  else     
+		  {
+			console.log('Zapisano do SimpleDB');           // successful response
+			callback();
+		  }
+	});
+}
+
+
+var task = function(request, callback){
+	selectFromDb(function(data){
+	callback(null,data);
+	});
+};
+
+
+
+exports.action = task;
 exports.getFromDb = getFromDb;
 exports.createDomain = createDomain;
 exports.putAttributes = putAttributes;
+exports.selectFromDb =selectFromDb;
+

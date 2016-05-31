@@ -30,7 +30,7 @@ s3.getObject(params, function(err, data) {
 					}
 					simpleDb.putAttributes('Pliki', AttributesPut, function(){
 					simpleDb.getFromDb('Pliki');				   	 
-			   });
+					});
 		}, 
 		loopCount);   // successful response
 });
