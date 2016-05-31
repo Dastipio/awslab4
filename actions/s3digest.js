@@ -1,4 +1,4 @@
-var AWS = require("awssdk");
+var AWS = require("aws-sdk");
 var helpers = require("../helpers");
 var simpleDb = require("./simpleDb");
 AWS.config.loadFromPath('./config.json');
